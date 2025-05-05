@@ -200,25 +200,21 @@ def olliker_prussner_step(index: np.int64, coordinates: npt.NDArray[np.float64],
         c = c + measure[index]
 
         # equation  0 = a * z^2 + b * z + c
-        b2M4ac = b*b-4*a*c
-        sol: list[np.float64] = []
-        if (np.abs(a) < 0.00001):
-            sol.extend([-c/b])
-            print("a param near zero")
-        else:
-            sol.extend([(-b + np.sqrt(b2M4ac))/(2*a),
-                        (-b - np.sqrt(b2M4ac))/(2*a)])
+        # details about this numerically stable quadratic solver:
+        # https://math.stackexchange.com/q/2007723
+        u = -b - np.copysign(np.sqrt(b*b-4*a*c), b)
+        sol = np.array([u / (2*a), (2*c) / u])
 
-        sol = np.array(sol)
-        sol2 = sol[np.where(sol < current_value)]
-        sol2 = sol2[np.where(sol2 > max_alpha)]
+        sol2 = sol[(sol < current_value) & (
+            sol > max_alpha) & np.isfinite(sol)]
+
         if len(sol2) > 0:
             return np.max(sol2)
         if max_alpha == -np.inf:
             # i currently don't know why this case happens from time to time,
             # but we just skip the vertex if it happens and let the "self healing"
             # property of global operation of the Oliker-Prussner-Method do its job
-            print("huh")
+            print("This should not happen, eq: a,b,c: ", a, b, c)
             return current_value
         # remove the vertex, that will not be on the convex hull
         # and repeat the calculation
