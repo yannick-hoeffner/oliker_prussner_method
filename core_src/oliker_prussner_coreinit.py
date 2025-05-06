@@ -140,14 +140,6 @@ def create_init_triangulation(coords: npt.NDArray[np.float64], boundary_mask: np
 
         init_u_values: the initial function values at the grid points
     """
-    # FIXME: add this to the CLI version
-    # if FUNCTION == 5 and not circular_point_cloud:
-    #     # repair the nan evaluation at the origin
-    #     # by continous extension of the function (u(0,0)=0)
-    #     boundary_values = np.nan_to_num(boundary_values)
-    #     # smooth boundary values
-    #     boundary_values[np.isclose(boundary_values, 0.0)] = 0.0
-
     # combine the boundary points with their function values given by the boundary condition
     hull_points = np.vstack(
         (coords[boundary_mask].T, [boundary_values[boundary_mask]])).T
