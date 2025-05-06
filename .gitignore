@@ -1,1 +1,8 @@
-*__pycache__/
+__pycache__/
+dist/
+olliker_prussner_method.egg-info/
+Lib/
+Include/
+Scripts/
+pyvenv.cfg
+share/

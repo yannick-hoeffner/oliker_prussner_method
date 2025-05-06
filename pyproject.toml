@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "olliker_prussner_method"
+version = "1.0.0"
+authors = [{ name="Yannick Höffner"}]
+description = "A python implementation of the Oliker-Prussner-Method for solving the 2 dimensional Monge-Ampère-Equation."
+readme = "README.md"
+dependencies = [
+    "numpy >= 2.1.3", 
+    "numba >= 0.61.0", 
+    "scipy >= 1.15.2", 
+    "matplotlib >= 3.10.1",]
+requires-python = ">=3.12"
+keywords = [
+    "monge-ampere",
+    "monge-ampere-equation",
+    "oliker-prussner-method",
+    "numerical-methods",
+    "numerical-analysis",
+    "partial-differential-equations",
+    "pde",
+    "2d-pde",
+    "2d-monge-ampere-equation",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Typing :: Typed",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/yannick-hoeffner/oliker_prussner_method"
+Issues = "https://github.com/yannick-hoeffner/oliker_prussner_method/issues"
