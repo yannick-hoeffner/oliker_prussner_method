@@ -85,11 +85,10 @@ def compute_MA_measure(coordinates: npt.NDArray[np.float64], boundaryMask: npt.N
     Returns:
         mu (NDArray[float64]): Monge-Ampère-Measure computed at every vertex
     """
-    tri = Delaunay(coordinates)
-    count, adj, _ = optri.find_adjacencies(
-        np.copy(coordinates), np.copy(tri.simplices))
+    tri = Delaunay(coordinates).simplices
+    count, adj, _ = optri.find_adjacencies(coordinates, tri)
 
-    return compute_MAM_from_grid(adj, tri.simplices, count, coordinates, boundaryMask, rhs_f)
+    return compute_MAM_from_grid(adj, tri, count, coordinates, boundaryMask, rhs_f)
 
 
 ########################################################################################################

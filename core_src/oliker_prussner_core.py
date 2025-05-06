@@ -310,7 +310,7 @@ def oliker_prussner_sceme(coordinates: npt.NDArray[np.float64], boundary_mask: n
         calculated_triags = optri.sort_triangles_CCW(
             coordinates, np.copy(triangles))
         count_adj, adjacencies, _ = optri.find_adjacencies(
-            np.copy(coordinates), calculated_triags)
+            coordinates, calculated_triags)
         ###########################################################
         # print iteration information
         ###########################################################
