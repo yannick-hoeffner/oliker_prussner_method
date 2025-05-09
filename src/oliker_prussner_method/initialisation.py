@@ -14,8 +14,7 @@ import numpy as np
 import numpy.typing as npt
 from typing import Callable
 from scipy.spatial import Delaunay
-from . import oliker_prussner_coretriag as optri
-# import core_src.oliker_prussner_coretriag as optri
+from . import triangulation as optri
 
 
 ########################################################################################################

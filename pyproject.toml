@@ -3,8 +3,8 @@ requires = ["setuptools>77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "olliker_prussner_method"
-version = "1.0.0"
+name = "oliker_prussner_method"
+version = "1.0.1"
 authors = [{ name="Yannick Höffner"}]
 description = "A python implementation of the Oliker-Prussner-Method for solving the 2 dimensional Monge-Ampère-Equation."
 readme = "README.md"

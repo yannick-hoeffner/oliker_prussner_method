@@ -1,6 +1,6 @@
 __all__ = [
-    "oliker_prussner_coreinit",
+    "oliker_prussner_initialisation",
     "oliker_prussner_core",
-    "oliker_prussner_plot",
-    "oliker_prussner_coretriag"
+    "oliker_prussner_plotting",
+    "oliker_prussner_triangulation"
 ]
