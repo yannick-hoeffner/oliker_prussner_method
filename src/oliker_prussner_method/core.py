@@ -14,8 +14,8 @@
 import numpy as np
 import numpy.typing as npt
 from numba import jit
-
-import core_src.oliker_prussner_coretriag as optri
+from . import triangulation as optri
+# import .oliker_prussner_coretriag as optri
 
 ########################################################################################################
 #   IMPORTANT EQUATION CALCULATIONS

@@ -11,9 +11,9 @@
 #
 #
 ######################################################################################################
-import core_src.oliker_prussner_coreinit as op_coreinit
-import core_src.oliker_prussner_core as op_core
-import core_src.oliker_prussner_plot as opplot
+import oliker_prussner_method.plotting as opplot
+import oliker_prussner_method.core as op_core
+import oliker_prussner_method.initialisation as op_coreinit
 import numpy as np
 import numpy.typing as npt
 import matplotlib.pyplot as plt

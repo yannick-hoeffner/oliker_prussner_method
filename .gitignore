@@ -1,1 +1,13 @@
-*__pycache__/
+# python runtime optimization
+__pycache__/
+
+# python packaging & building
+dist/
+oliker_prussner_method.egg-info/
+
+# python virtual environment
+Lib/
+Include/
+Scripts/
+pyvenv.cfg
+share/
